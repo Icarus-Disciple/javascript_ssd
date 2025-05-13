@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML CSS Review</title>
+    <style>
+      .red-button {
+        background-color: red;
+        color: white;
+      }
+      .yellow-button {
+        background-color: yellow;
+        color: black;
+      }
+    </style>
   </head>
   <body>
-    <button>hello</button>
-    <p>paragraph of tex asdfasdfas fasdfasdfasdft</p>
-    <script>alert('hello')</script>
+    <button 
+      class="red-button" 
+      title="Good Job!" 
+      onclick="alert('Good Jobs!')">
+        hello
+    </button>
+    <p>paragraph of 
+      <button class="yellow-button">hello</button> 
+      text
+    </p>
+    <script>
+    // this is a comment.
+    //this code creates a popup.
+    console.log(2+2)
+    console.log('some'+'text')
+    </script>
+  
   </body>
+  
+
 </html>
