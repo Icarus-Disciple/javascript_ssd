@@ -6,28 +6,47 @@
     <title>Booleans</title>
   </head>
   <body>
+    <button onclick="
+      coinflipGame('Heads', score)
+      ">heads</button>
+    <button onclick="
+      coinflipGame('Tails',score)
+    ">tails</button>
+    <button onclick="
+      score.win=0;
+      score.loss=0;
+      localStorage.removeItem('score');
+      console.log(score)
+    ">reset score</button>
    
     <script>
-      /*
-      console.log(3>5);
 
-      const age = 15
+      let score = JSON.parse(localStorage.getItem('score')) 
+      ||  {
+        win:0,
+        loss:0
+        }
+      
+      function computerChoice() {
+        if (Math.random() >= 0.5) {
+          return 'Heads'
+        } else {return 'Tails'}
+      }
 
-      if (false) {
-        console.log('this is true');
-      } else {console.log('this is not true')}
+      function coinflipGame(guess,score) {
+        result = computerChoice();
+        if (result === guess) {
+          score.win++;
+          alert(`${guess}:${result}: You win!`);
+        } else {
+          score.loss++;
+          alert(`${guess}:${result}: You lose!`)
+        }
 
-      if (age >= 16) {
-        console.log('you can drive');
-      } else if (age >= 14) {
-        console.log('almost there');
-      } else {console.log('you CANNOT drive')};
-       */
+        console.log(score);
+        localStorage.setItem('score',JSON.stringify(score));
+      }
 
-      const result = !0 ? 'truthy':'falsy';
-      console.log(result);
-
-      true && console.log('yomama');
     </script>
   
   </body>

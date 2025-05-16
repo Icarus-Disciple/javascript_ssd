@@ -7,7 +7,54 @@
 </head>
 <body>
   <script>
+    /*
+    const product2 = {
+      name: 'shirt',
+      'delivery-time':'1day',
+      'rating': {
+        'stars':4.5,
+        'count':87
+      }
+    }
+    console.log(product2)
+    console.log(product2['delivery-time'])
+    console.log(JSON.stringify(product2))
 
+    localStorage.setItem('message','hello')
+    */
+
+    console.log('hello'.length); /* length of string*/
+    const item1 = {
+      name: 'basketball',
+      price: 2095
+    }
+
+    //console.log(item1);
+    item1.price += 500;
+    //console.log(item1);
+
+    item1['delivery-time'] = '3 days';
+
+    //console.log(item1);
+
+    const item2 = {
+      name: 'basketball',
+      price: 2595
+    }
+
+    function comparePrice(product1, product2) {
+      if (product1.price >= product2.price) {
+        return product1;
+      } else {return product2}
+    }
+
+    function isSameProduct(product1, product2) {
+      if (product1.name === product2.name && product1.price === product2.price) {
+        return true;
+      } else {return false}
+    }
+
+    console.log(isSameProduct(item1, item2))
   </script>
 </body>
 </html>
